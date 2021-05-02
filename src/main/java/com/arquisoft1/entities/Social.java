@@ -6,9 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "sociales")
+@Table(name = "sociales",
+uniqueConstraints = @UniqueConstraint(columnNames = {"seguidor","seguido"}))
 public class Social {
 	
 	@Id
@@ -16,10 +18,10 @@ public class Social {
 	private Long id;
 	
 	@Column(nullable = false, length = 36)
-	private String uuid_seguidor;
+	private String seguidor;
 	
 	@Column(nullable = false, length = 36)
-	private String uuid_seguido;
+	private String seguido;
 	
 	public Long getId() {
 		return id;
@@ -27,17 +29,17 @@ public class Social {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getUuid_seguidor() {
-		return uuid_seguidor;
+	public String getSeguidor() {
+		return seguidor;
 	}
-	public void setUuid_seguidor(String uuid_seguidor) {
-		this.uuid_seguidor = uuid_seguidor;
+	public void setSeguidor(String seguidor) {
+		this.seguidor = seguidor;
 	}
-	public String getUuid_seguido() {
-		return uuid_seguido;
+	public String getSeguido() {
+		return seguido;
 	}
-	public void setUuid_seguido(String uuid_seguido) {
-		this.uuid_seguido = uuid_seguido;
+	public void setSeguido(String seguido) {
+		this.seguido = seguido;
 	}
 		
 }
