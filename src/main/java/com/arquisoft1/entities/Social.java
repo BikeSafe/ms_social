@@ -15,10 +15,10 @@ public class Social {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, length = 36)
 	private String uuid_seguidor;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, length = 36)
 	private String uuid_seguido;
 	
 	public Long getId() {
