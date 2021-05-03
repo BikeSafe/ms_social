@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "sociales",
@@ -17,9 +19,13 @@ public class Social {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty(message="esta vacio")
+	@Size(min=36, max=36, message="es incorrecto")
 	@Column(nullable = false, length = 36)
 	private String seguidor;
 	
+	@NotEmpty(message="esta vacio")
+	@Size(min=36, max=36, message="es incorrecto")
 	@Column(nullable = false, length = 36)
 	private String seguido;
 	

@@ -12,7 +12,7 @@ public interface ISocialService {
 	
 	List<String> findSeguidores(String seguido);
 	
-	public boolean verify(String seguidor, String seguido);
+	public void delete(Social social);
 	
-	public void delete(String seguidor, String seguido);
+	public Social findSocial(Social social);
 }

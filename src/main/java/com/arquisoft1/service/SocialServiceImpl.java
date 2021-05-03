@@ -40,22 +40,17 @@ public class SocialServiceImpl implements ISocialService {
 		
 		return listSeguidores;
 	}
-
+	
 	@Override
-	public boolean verify(String seguidor, String seguido) {
-		Social social = dao.findBySeguidorAndSeguido(seguidor, seguido);
-		
-		if(social == null) {
-			return false;
-		}else{
-			return true;
-		}
-	}
-
-	@Override
-	public void delete(String seguidor, String seguido) {
-		Social social = dao.findBySeguidorAndSeguido(seguidor, seguido);
+	public void delete(Social social) {
 		dao.delete(social);
 	}
+
+	@Override
+	public Social findSocial(Social social) {
+		return dao.findBySeguidorAndSeguido(social.getSeguidor(), social.getSeguido());
+	}
+	
+	
 
 }
