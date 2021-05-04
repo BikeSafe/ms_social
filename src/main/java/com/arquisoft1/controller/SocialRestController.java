@@ -37,7 +37,7 @@ public class SocialRestController {
 		return service.create(social);
 	}
 	
-	@GetMapping("/verificar")
+	@PostMapping("/verificar")
 	public boolean verify(@RequestBody Social social, BindingResult result) {
 		Social socialFind = service.findSocial(social);	
 		
