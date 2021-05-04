@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.arquisoft.2021</groupId>
 	<artifactId>ms_social</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>ms_social</name>
 	<description>Microservicio de la parte social</description>
 	<properties>
