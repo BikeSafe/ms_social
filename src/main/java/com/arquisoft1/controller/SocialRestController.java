@@ -49,9 +49,16 @@ public class SocialRestController {
 	}
 	
 	@DeleteMapping("/eliminar")
-	public void delete(@RequestBody Social social) {
+	public String delete(@RequestBody Social social) {
+		String bad = "{"+'"'+"mensaje"+'"'+':'+'"'+"No existe esa relacion seguidor seguido"+'"'+"}";
+		String good = "{"+'"'+"mensaje"+'"'+':'+'"'+"ok"+'"'+"}";
 		Social socialFind = service.findSocial(social);	
-		service.delete(socialFind);
+		if(socialFind==null) {
+			return bad;
+		}else {
+			service.delete(socialFind);
+			return good;
+		}
 	}
 	
 }
