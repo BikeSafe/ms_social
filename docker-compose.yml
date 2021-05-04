@@ -1,0 +1,7 @@
+version: '3'
+services:
+    user-server:
+        container_name: api-ms-social
+        build: .
+        ports:
+            - 4006:4006

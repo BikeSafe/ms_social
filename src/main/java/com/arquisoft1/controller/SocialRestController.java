@@ -37,7 +37,7 @@ public class SocialRestController {
 		Map<String, Object> response = new HashMap<>();
 		
 		if(seguido.length() != 36) {
-			response.put("errores", "uuid incorrecto");
+			response.put("error", "uuid incorrecto");
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
 		}
 		
@@ -59,7 +59,7 @@ public class SocialRestController {
 		Map<String, Object> response = new HashMap<>();
 		
 		if(seguidor.length() != 36) {
-			response.put("errores", "uuid incorrecto");
+			response.put("error", "uuid incorrecto");
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
 		}
 		
@@ -87,7 +87,7 @@ public class SocialRestController {
 					.map(err -> "El campo " + err.getField() +" "+ err.getDefaultMessage())
 					.collect(Collectors.toList());
 			
-			response.put("errores", errors);
+			response.put("error", errors);
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
 		}
 		
@@ -115,7 +115,7 @@ public class SocialRestController {
 					.map(err -> "El campo " + err.getField() +" "+ err.getDefaultMessage())
 					.collect(Collectors.toList());
 			
-			response.put("errores", errors);
+			response.put("error", errors);
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
 		}
 		
@@ -148,7 +148,7 @@ public class SocialRestController {
 					.map(err -> "El campo " + err.getField() +" "+ err.getDefaultMessage())
 					.collect(Collectors.toList());
 			
-			response.put("errores", errors);
+			response.put("error", errors);
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
 		}
 		
